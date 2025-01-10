@@ -27,6 +27,27 @@ const PokemonCard = ({pokemonData}) => {
             <span>Speed:</span> {pokemonData.stats[5].base_stat}
         </p>
       </div>
+
+      <div className='grid-three-cols'>
+        <div className='pokemon-info'>
+            <p>{pokemonData.base_experience}</p>
+            <span>Experience:</span>
+        </div>
+        <div className='pokemon-info'>
+            <p>{pokemonData.stats[1].base_stat}</p>
+            <span>Attack:</span>
+        </div>
+        <div className='pokemon-info'>
+            <p>
+                {
+                    pokemonData.abilities.map((abilityInfo)=> abilityInfo.ability.name)
+                    .slice(0,1)
+                }
+            </p>
+            <span>Abilities:</span>
+        </div>
+      </div>
+
     </li>
   )
 }
